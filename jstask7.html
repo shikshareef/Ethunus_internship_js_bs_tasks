@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Train Animation</title>
+<style>
+  .container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  .train {
+    width: 100px;
+    transition: transform 1s;
+  }
+  img {
+    width: 400px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div>
+        <img id="train" class="train" src="train.jpg" alt="Train">
+      </div>
+  <h2>Click the buttons to handle the animations</h2>
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+  
+</div>
+
+<script>
+  let animationInterval = null;
+
+  function startAnimation() {
+    const train = document.getElementById('train');
+    animationInterval = setInterval(() => {
+      train.style.transform = 'translateX(400px)';
+      setTimeout(() => {
+        train.style.transform = 'translateX(0)';
+      }, 1000);
+    }, 2000);
+  }
+
+  function stopAnimation() {
+    clearInterval(animationInterval);
+  }
+
+  document.getElementById('start').addEventListener('click', startAnimation);
+  document.getElementById('stop').addEventListener('click', stopAnimation);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Enter the number:</p>
+    <input type="number" id="value">
+    <button id="button">Reverse</button>
+
+    <script>
+        let button = document.getElementById("button");
+        button.onclick = () => {
+            let num = Number(document.getElementById("value").value);
+            let res = 0;
+            while (num > 0) {
+                let rem = num % 10;
+                res = res * 10 + rem;
+                num = Math.floor(num / 10);
+            }
+
+            let resultbox = document.createElement("div");
+            resultbox.innerHTML = res;
+            document.body.append(resultbox);
+        } 
+    </script>
+</body>
+</html>

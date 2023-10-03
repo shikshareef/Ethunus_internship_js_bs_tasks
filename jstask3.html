@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            height: max-content;
+            width: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 30px;
+            border: 1px solid black;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="con1">
+            <span>Enter 1st number:</span><input type="number" id="num1"><br>
+        </div>
+        <div class="con1">
+            <span>Enter 2nd number:</span><input type="number" id="num2"><br>
+        </div>
+        <div class="butcon">
+            <button id="mul">Multiply</button>
+            <button id="div">Divide</button>
+        </div>      
+    </div>
+</body>
+<script>
+
+    let resbox = document.createElement("p"); // Initialize resbox here
+
+    document.getElementById("mul").onclick=()=>{
+        let num1 = Number(document.getElementById("num1").value);
+        let num2 = Number(document.getElementById("num2").value);
+        let res = num1*num2;
+        resbox.innerText=res;
+        document.querySelector(".container").appendChild(resbox);
+    }
+
+    document.getElementById("div").onclick=()=>{
+        let num1 = Number(document.getElementById("num1").value);
+        let num2 = Number(document.getElementById("num2").value);
+        let res = num1/num2;
+        resbox.innerText=res;
+        document.querySelector(".container").appendChild(resbox);
+    }
+
+</script>
+</html>

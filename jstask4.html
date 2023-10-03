@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Date and Time</title>
+    <style>
+        .container{
+            height: max-content;
+            width: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 30px;
+            border: 1px solid black;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="showDate">Show Date</button>
+        <button id="showTime">Show Time</button>
+        <p id="output"></p>
+    </div>
+
+    <script>
+        document.getElementById("showDate").addEventListener("click", function() {
+            let currentDate = new Date().toDateString();
+            document.getElementById("output").innerText = currentDate;
+        });
+
+        document.getElementById("showTime").addEventListener("click", function() {
+            let currentDateTime = new Date().toString();
+            document.getElementById("output").innerText = currentDateTime;
+        });
+    </script>
+</body>
+</html>
